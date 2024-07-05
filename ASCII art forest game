@@ -1,0 +1,40 @@
+while True:
+    n = input("You are in the Lost Forest\n"
+              "************\n"
+              "     :)     \n"
+              "*           *\n"
+              "*************\n"
+              "MAXIMUM INVALID INPUT: 5 TIMES\n"
+              "Go left or right? ")
+
+    for i in range(5):
+        while n.lower() == "right":
+            print("\nTRY AGAIN!\n")
+            n = input("You are still in the Lost Forest!\n"
+                      "************\n"
+                      "     :(     \n"
+                      "*           *\n"
+                      "*************\n"
+                      "Go left or right? ")
+
+        if n.lower() == "left":
+            print("\nYou got out of the Lost Forest! \nCongratulations!")
+            break
+        else:
+            print("INVALID INPUT.\n"
+                  "PLEASE GO RIGHT OR LEFT\n"
+                  "REMAINING CHANCES:", 5 - i)
+            n = input("You are in the Lost Forest\n"
+                      "************\n"
+                      "     :)     \n"
+                      "*           *\n"
+                      "*************\n"
+                      "Go left or right? ")
+
+    if i == 4:
+        print("YOUR 5 CHANCES ARE OVER")
+    
+    play_again = input("Do you want to play again? (yes/no): ").lower()
+    if play_again != 'yes':
+        print("Thanks for playing! Goodbye.")
+        break
